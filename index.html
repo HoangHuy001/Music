@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music của Hoàng Huy- Nghe Nhạc</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="logo">
+          <i class="fas fa-music music-icon"></i>
+          <h1>Music</h1>
+        </div>
+        <p class="tagline">Playlist của Huy</p>
+      </header>
+
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm bài hát, ca sĩ..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="all">
+          <i class="fas fa-list"></i> Tất cả
+        </button>
+        <button class="tab" data-tab="playlist">
+          <i class="fas fa-heart"></i> Yêu thích
+          <span class="count-badge" id="playlist-count">0</span>
+        </button>
+      </nav>
+
+      <main class="song-list" id="song-list"></main>
+
+      <footer class="player-bar">
+        <div class="now-playing">
+          <div class="album-art" id="album-art">
+            <div class="vinyl" id="vinyl"></div>
+          </div>
+          <div class="track-info">
+            <div id="current-title">Chọn một bài hát để phát</div>
+            <div id="current-singer">Music Của Hoàng Huy</div>
+          </div>
+          <button class="like-current-btn"><i class="far fa-heart"></i></button>
+        </div>
+
+        <div class="player-controls">
+          <button id="shuffle-btn" class="ctrl-btn">
+            <i class="fas fa-random"></i>
+          </button>
+          <button id="prev-btn" class="ctrl-btn">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button id="play-pause-btn" class="play-btn">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next-btn" class="ctrl-btn">
+            <i class="fas fa-step-forward"></i>
+          </button>
+          <button id="repeat-btn" class="ctrl-btn">
+            <i class="fas fa-redo"></i>
+          </button>
+        </div>
+
+        <div class="progress-container">
+          <span id="current-time">0:00</span>
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="volume-container">
+          <button id="volume-btn"><i class="fas fa-volume-up"></i></button>
+          <div class="volume-slider">
+            <input
+              type="range"
+              id="volume-range"
+              min="0"
+              max="100"
+              value="80"
+            />
+            <div class="volume-fill"></div>
+          </div>
+        </div>
+      </footer>
+      <audio id="audio" preload="metadata"></audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
